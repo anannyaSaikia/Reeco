@@ -10,9 +10,9 @@ const OrderPage = () => {
         <div>
             <Navbar />
 
-            <div className='topper'>
-                <div>Order &gt; Order32457ABC</div>
-                <div className='flex justify-between'>
+            <div className='p-2 shadow-md shadow-black-400 items-center bg-white'>
+                <div className='flex w-full justify-start'>Order &gt; Order32457ABC</div>
+                <div className='flex justify-between items-center'>
                     <Title>Order32457ABC</Title>
                     <div>
                         <ButtonL>Back</ButtonL>
@@ -21,52 +21,52 @@ const OrderPage = () => {
                 </div>
             </div>
 
-            <div className='details'>
+            <div className='flex justify-between w-5/6 m-auto p-3 mt-10 bg-white border border-grey-500 rounded-lg'>
                 <div>
                     <p>Supplier</p>
-                    <p>East coast fruits<br /> & vegetables</p>
+                    <p className='font-bold'>East coast fruits<br /> & vegetables</p>
                 </div>
                 <div className='border-l border-grey-100'></div>
 
                 <div>
                     <p>Shipping date</p>
-                    <p>East coast fruits<br />& vegetables</p>
+                    <p className='font-bold'>Thu, Feb 10</p>
                 </div>
                 <div className='border-l border-grey-100'></div>
 
                 <div>
-                    <p>Total</p>
-                    <p>Thu, Feb 10</p>
+                    <p >Total</p>
+                    <p className='font-bold'></p>
                 </div>
                 <div className='border-l border-grey-100'></div>
 
                 <div>
                     <p>Category</p>
-                    <p>Categories</p>
+                    <p className='font-bold'>Categories</p>
                 </div>
                 <div className='border-l border-grey-100'></div>
 
                 <div>
                     <p>Department</p>
-                    <p>300-444-678</p>
+                    <p className='font-bold'>300-444-678</p>
                 </div>
                 <div className='border-l border-grey-100'></div>
 
                 <div>
                     <p>Status</p>
-                    <p>Awaiting your<br />approval</p>
+                    <p className='font-bold'>Awaiting your<br />approval</p>
                 </div>
 
             </div>
 
-            <div className='container'>
+            <div className='w-5/6 m-auto mt-10 p-3 bg-white border border-grey-500 rounded-lg'>
                 <div className='flex justify-between'>
                     <Search>
                         <p>Search...</p>
                         <CiSearch />
                     </Search>
 
-                    <div>
+                    <div className='flex justify-between items-center'>
                         <ButtonL>Add Item</ButtonL>
                         <FiPrinter />
                     </div>
