@@ -1,15 +1,22 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from './Navbar'
 import ProductsTable from './ProductsTable'
 import { ButtonH, ButtonL, Search, Title } from '../StyledComponents'
 import { CiSearch } from "react-icons/ci";
 import { FiPrinter } from "react-icons/fi";
+import { useDispatch } from 'react-redux';
+import { fetchData } from '../Redux/actionCreator';
 
 const OrderPage = () => {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        fetchData(dispatch)
+    })
+
     return (
         <div>
             <Navbar />
-
             <div className='p-2 shadow-md shadow-black-400 items-center bg-white'>
                 <div className='flex w-full justify-start'>Order &gt; Order32457ABC</div>
                 <div className='flex justify-between items-center'>

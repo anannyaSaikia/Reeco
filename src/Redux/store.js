@@ -1,6 +1,5 @@
-import {configureStore} from "@reduxjs/toolkit";
-import orderReducer from "./OrderSlice";
+import { applyMiddleware, legacy_createStore as createStore} from "redux";
+import { orderReducer } from "./orderReducer";
+import thunk from "redux-thunk"
 
-export const store = configureStore({
-    reducer: orderReducer
-})
+export const store = createStore(orderReducer, applyMiddleware(thunk));
