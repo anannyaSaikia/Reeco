@@ -3,7 +3,7 @@ import { ADDDATA, APPROVED, MISSING, MISSINGURGENT } from './actionTypes';
 export const addData = (data) =>{
     return {
         type : ADDDATA,
-        payload : data
+        payload : data,
     }
 }
 

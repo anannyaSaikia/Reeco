@@ -1,14 +1,18 @@
 import { ADDDATA, APPROVED, MISSING, MISSINGURGENT } from "./actionTypes";
 
 const initState = {
-    data: []
+    data: [],
+    total : 0
 }
 
 export const orderReducer = (state = initState, action) => {
     switch (action.type) {
 
         case ADDDATA : {
-            return {...state, data: action.payload }
+            const sum = action.payload.reduce((acc, ele)=> {
+                return acc+ele.total
+            }, 0)
+            return {...state, data: action.payload, total : sum}
         }
 
         case APPROVED: {

@@ -5,13 +5,13 @@ import { BsCart } from "react-icons/bs";
 const Navbar = () => {
     return (
         <>
-            <nav className="flex w-full bg-green-800 text-white justify-between p-5 items-center">
+            <nav className="flex w-full bg-green-800 text-white justify-between p-3 items-center">
                 <div className="flex justify-between">
                     <Title>Reeco</Title>
                     <div className="flex">
-                    <p className='mr-5 mt-2.5'>Store</p>
-                    <p className='mr-5 mt-2.5'>Orders</p>
-                    <p className='mr-5 mt-2.5'>Analytics</p>
+                    <p className='mr-5 mt-1'>Store</p>
+                    <p className='mr-5 mt-1'>Orders</p>
+                    <p className='mr-5 mt-1'>Analytics</p>
                     </div>
                 </div>
                 <div className="flex align-center">

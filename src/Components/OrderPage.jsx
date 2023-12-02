@@ -4,11 +4,15 @@ import ProductsTable from './ProductsTable'
 import { ButtonH, ButtonL, Search, Title } from '../StyledComponents'
 import { CiSearch } from "react-icons/ci";
 import { FiPrinter } from "react-icons/fi";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchData } from '../Redux/actionCreator';
 
 const OrderPage = () => {
     const dispatch = useDispatch();
+
+    const total = useSelector((store) => {
+        return store.total
+    })
 
     useEffect(() => {
         fetchData(dispatch)
@@ -17,7 +21,7 @@ const OrderPage = () => {
     return (
         <div>
             <Navbar />
-            <div className='p-2 shadow-md shadow-black-400 items-center bg-white'>
+            <div className='p-2 shadow-md shadow-black-400 items-center bg-white mb-10'>
                 <div className='flex w-full justify-start'>Order &gt; Order32457ABC</div>
                 <div className='flex justify-between items-center'>
                     <Title>Order32457ABC</Title>
@@ -28,7 +32,7 @@ const OrderPage = () => {
                 </div>
             </div>
 
-            <div className='flex justify-between w-5/6 m-auto p-3 mt-10 bg-white border border-grey-500 rounded-lg'>
+            <div className='flex justify-between w-5/6 m-auto p-2 bg-white border border-grey-500 rounded-lg'>
                 <div>
                     <p>Supplier</p>
                     <p className='font-bold'>East coast fruits<br /> & vegetables</p>
@@ -43,7 +47,7 @@ const OrderPage = () => {
 
                 <div>
                     <p >Total</p>
-                    <p className='font-bold'></p>
+                    <p className='font-bold'>{total}</p>
                 </div>
                 <div className='border-l border-grey-100'></div>
 
@@ -66,7 +70,7 @@ const OrderPage = () => {
 
             </div>
 
-            <div className='w-5/6 m-auto mt-10 p-3 bg-white border border-grey-500 rounded-lg'>
+            <div className='w-5/6 m-auto p-3 bg-white border border-grey-500 rounded-lg'>
                 <div className='flex justify-between'>
                     <Search>
                         <p>Search...</p>
