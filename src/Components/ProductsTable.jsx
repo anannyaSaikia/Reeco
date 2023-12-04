@@ -5,7 +5,7 @@ import { TiTick } from "react-icons/ti";
 import { useDispatch } from 'react-redux';
 import { orderApproved, orderMissing, orderMissingUrgent } from '../Redux/actionCreator';
 import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
+//import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 const ProductsTable = () => {
@@ -43,10 +43,10 @@ const ProductsTable = () => {
                     <th></th>
                     <th>Product name</th>
                     <th>Brand</th>
-                    <th>Price</th>
+                    <th className='m-5'>Price</th>
                     <th>Quantity</th>
                     <th>Total</th>
-                    <th className='w-1/3'>Status</th>
+                    <th className='w-1/4 bg-slate-200'>Status</th>
                 </tr>
             </thead>
             <tbody>
@@ -57,13 +57,13 @@ const ProductsTable = () => {
                                 <td><img src={ele.image} alt='Avocado' /></td>
                                 <td>{ele.name}</td>
                                 <td>{ele.brand}</td>
-                                <td>{ele.price}</td>
+                                <td >{ele.price}</td>
                                 <td>{ele.quantity}</td>
                                 <td>{ele.total}</td>
-                                <td className='flex justify-between items-center w-full px-5'>
-                                    <p className={ele.status === 'approved' ? 'bg-green-500 flex w-1/3 justify-start rounded' : (ele.status === 'missing' || 'missingUrgent' ? 'bg-red-500 flex w-1/3 justify-start rounded' : 'bg-white flex w-1/3 justify-start rounded')}>{ele.status}</p>
-                                    <div className='flex justify-between w-2/3'>
-                                        <RxCross1 className={ele.status === 'missing' ? 'text-red-400' : (ele.status === 'missingUrgent' ? 'text-red-700' : 'text-grey')} onClick={() => {
+                                <td className='flex justify-between items-center w-full px-5 bg-slate-200'>
+                                    <p className={ele.status === 'approved' ? 'bg-green-500 flex justify-start rounded px-3 ml-[-40px] mt-3' : (ele.status === 'missing' || 'missingUrgent' ? 'bg-red-500 flex justify-start rounded px-3 ml-[-40px] mt-3' : 'bg-white flex justify-start rounded px-3 ml-[-40px] mt-3')}>{ele.status}</p>
+                                    <div className='flex justify-end items-center'>
+                                        <RxCross1 className={ele.status === 'missing' ? 'text-red-400 mr-3 ' : (ele.status === 'missingUrgent' ? 'text-red-700 mr-3' : 'text-black mr-3')} onClick={() => {
                                             handleShow()
                                             setId(ele.id)
                                             setName(ele.name)
@@ -75,21 +75,21 @@ const ProductsTable = () => {
                                             </Modal.Header>
                                             <Modal.Body>{`Is '${name}' urgent?`}</Modal.Body>
                                             <Modal.Footer>
-                                                <Button variant="secondary" onClick={() => {
+                                                <button className='font-bold pr-5' onClick={() => {
                                                     handleCrossMissing(id)
                                                 }}>
                                                     No
-                                                </Button>
-                                                <Button variant="primary" onClick={() => {
+                                                </button>
+                                                <button className='font-bold pr-5' onClick={() => {
                                                     handleCrossMissingUrgent(id)
                                                 }}>
                                                     Yes
-                                                </Button>
+                                                </button>
                                             </Modal.Footer>
                                         </Modal>
 
-                                        <TiTick onClick={() => handleTick(ele.id)} className={ele.status === 'approved' ? 'text-green-500' : 'text-grey'} />
-                                        <p>Edit</p>
+                                        <TiTick onClick={() => handleTick(ele.id)} className={ele.status === 'approved' ? 'text-green-500 mr-3' : 'text-black mr-3'} />
+                                        <p className='pt-3'>Edit</p>
                                     </div>
                                 </td>
                             </tr>
